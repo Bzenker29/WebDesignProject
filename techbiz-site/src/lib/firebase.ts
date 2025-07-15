@@ -1,5 +1,6 @@
 import { initializeApp, getApps } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
+import { getAuth } from "firebase/auth";
 
 const config = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -13,3 +14,4 @@ const config = {
 // Avoid re‑initialising on hot‑reload
 const app = getApps().length ? getApps()[0] : initializeApp(config);
 export const db = getFirestore(app);
+export const auth = getAuth(app);
