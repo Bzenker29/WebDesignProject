@@ -32,7 +32,7 @@ export default function ServicesPage() {
               className="bg-white rounded-xl shadow p-6 hover:shadow-md transition text-left text-blue-700"
             >
               <div className="text-4xl mb-4">{s.icon || "🛠️"}</div>
-              <h2 className="text-xl font-semibold mb-2">{s.title}</h2>
+              <h2 className="text-lg font-semibold text-blue-700">{s.name}</h2>
               <p className="text-gray-600">{s.description}</p>
             </div>
           ))}

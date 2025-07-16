@@ -6,6 +6,7 @@ import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { isAdmin } from "@/lib/checkAdmin";
 import AddProductForm from "@/components/AddProductForm";
+import AddServiceForm from "@/components/AddServiceForm";
 
 
 export default function AdminPage() {
@@ -48,6 +49,8 @@ export default function AdminPage() {
   
         {/* ✅ Add Product Form here */}
         <AddProductForm />
+        <AddServiceForm />
+
       </div>
     </main>
   );
