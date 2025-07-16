@@ -1,26 +1,64 @@
 @import "tailwindcss";
 
+/* Centralized Theme Colors */
 :root {
+  /* Background and Text */
   --background: #ffffff;
   --foreground: #171717;
+
+  /* Text Colors */
+  --text-main: #171717;
+  --text-muted: #6b7280;
+  --text-heading: #1e3a8a;
+
+  /* Primary Theme Colors */
+  --primary: #2563eb;
+  --primary-hover: #1d4ed8;
+  --primary-light: #3b82f6;
+
+  /* Secondary/Accent */
+  --secondary: #f97316;
+  --secondary-hover: #ea580c;
+  --accent: #10b981;
+
+  /* Buttons */
+  --btn-bg: var(--primary);
+  --btn-hover: var(--primary-hover);
+  --btn-text: #ffffff;
+  --btn-disabled: #cbd5e1;
+
+  /* Borders & UI Elements */
+  --border: #e5e7eb;
+  --shadow: rgba(0, 0, 0, 0.05);
+  --ring: #93c5fd; /* blue-300 */
+  --focus-outline: #60a5fa; /* blue-400 */
+
+  /* Cards & Containers */
+  --card-bg: #f9fafb;
+  --card-shadow: rgba(0, 0, 0, 0.03);
+
+  /* Input Fields */
+  --input-bg: #ffffff;
+  --input-border: #d1d5db;
+  --input-text: #111827;
+
+  /* Links */
+  --link: var(--primary);
+  --link-hover: var(--primary-hover);
+
+  /* Status */
+  --success: #22c55e;
+  --error: #ef4444;
+  --warning: #facc15;
+
+  /* Optional layout-specific */
+  --navbar-bg: #ffffff;
+  --footer-bg: #f3f4f6;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
+/* Base Body Styling */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }

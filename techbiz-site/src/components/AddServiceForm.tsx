@@ -20,15 +20,29 @@ export default function AddServiceForm() {
   }
 
   return (
-    <div className="bg-white shadow rounded-xl p-6 text-blue-700">
-      <h2 className="text-xl font-semibold mb-4 text-blue-700">Add New Service</h2>
+    <div
+      className="bg-white shadow rounded-xl p-6"
+      style={{ color: "var(--text-main)" }}
+    >
+      <h2
+        className="text-xl font-semibold mb-4"
+        style={{ color: "var(--text-heading)" }}
+      >
+        Add New Service
+      </h2>
 
       <form onSubmit={handleSubmit} className="space-y-4">
         <div>
-          <label className="block text-sm mb-1 text-blue-700">Service Name</label>
+          <label
+            className="block text-sm mb-1"
+            style={{ color: "var(--text-main)" }}
+          >
+            Service Name
+          </label>
           <input
             type="text"
-            className="w-full border border-blue-300 p-2 rounded"
+            className="w-full border p-2 rounded"
+            style={{ borderColor: "var(--primary)", color: "var(--text-main)" }}
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
             required
@@ -36,9 +50,15 @@ export default function AddServiceForm() {
         </div>
 
         <div>
-          <label className="block text-sm mb-1 text-blue-700">Description</label>
+          <label
+            className="block text-sm mb-1"
+            style={{ color: "var(--text-main)" }}
+          >
+            Description
+          </label>
           <textarea
-            className="w-full border border-blue-300 p-2 rounded h-24"
+            className="w-full border p-2 rounded h-24"
+            style={{ borderColor: "var(--primary)", color: "var(--text-main)" }}
             value={form.description}
             onChange={(e) => setForm({ ...form, description: e.target.value })}
             required
@@ -46,10 +66,16 @@ export default function AddServiceForm() {
         </div>
 
         <div>
-          <label className="block text-sm mb-1 text-blue-700">Icon URL (optional)</label>
+          <label
+            className="block text-sm mb-1"
+            style={{ color: "var(--text-main)" }}
+          >
+            Icon URL (optional)
+          </label>
           <input
             type="text"
-            className="w-full border border-blue-300 p-2 rounded"
+            className="w-full border p-2 rounded"
+            style={{ borderColor: "var(--primary)", color: "var(--text-main)" }}
             value={form.icon}
             onChange={(e) => setForm({ ...form, icon: e.target.value })}
           />
@@ -57,13 +83,23 @@ export default function AddServiceForm() {
 
         <button
           type="submit"
-          className="bg-blue-700 text-white px-4 py-2 rounded hover:bg-blue-800"
+          className="px-4 py-2 rounded hover:bg-blue-800"
+          style={{ backgroundColor: "var(--btn-bg)", color: "var(--btn-text)" }}
         >
           Add Service
         </button>
       </form>
 
-      {status && <p className="mt-4 text-blue-700 text-sm">{status}</p>}
+      {status && (
+        <p
+          className="mt-4 text-sm"
+          style={{
+            color: status.startsWith("✅") ? "var(--accent)" : "red",
+          }}
+        >
+          {status}
+        </p>
+      )}
     </div>
   );
 }

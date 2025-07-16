@@ -11,7 +11,7 @@ export default function ProductsPage() {
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600">Loading products…</p>
+        <p style={{ color: "var(--text-muted)" }}>Loading products…</p>
       </main>
     );
   }
@@ -21,8 +21,11 @@ export default function ProductsPage() {
   // ----------------------------
   if (products.length === 0) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-16">
-        <p className="text-gray-500 text-lg">No products available right now. Check back soon!</p>
+      <main
+        className="min-h-screen flex items-center justify-center px-4 py-16"
+        style={{ backgroundColor: "var(--background)", color: "var(--text-muted)" }}
+      >
+        <p className="text-lg">No products available right now. Check back soon!</p>
       </main>
     );
   }
@@ -31,9 +34,15 @@ export default function ProductsPage() {
   // Products grid
   // ----------------------------
   return (
-    <main className="min-h-screen bg-gray-50 px-4 py-16">
+    <main
+      className="min-h-screen px-4 py-16"
+      style={{ backgroundColor: "var(--background)" }}
+    >
       <div className="max-w-6xl mx-auto">
-        <h1 className="text-3xl font-bold text-center mb-12 text-blue-700">
+        <h1
+          className="text-3xl font-bold text-center mb-12"
+          style={{ color: "var(--text-heading)" }}
+        >
           Our Products
         </h1>
 
@@ -41,7 +50,13 @@ export default function ProductsPage() {
           {products.map((p) => (
             <div
               key={p.id}
-              className="bg-white rounded-xl shadow hover:shadow-md transition overflow-hidden text-blue-700"
+              className="rounded-xl transition overflow-hidden"
+              style={{
+                backgroundColor: "var(--background)",
+                color: "var(--text-main)",
+                border: "2px solid var(--border)",
+                boxShadow: "0 4px 6px var(--shadow)",
+              }}
             >
               {p.image && (
                 <img
@@ -52,7 +67,7 @@ export default function ProductsPage() {
               )}
               <div className="p-6">
                 <h2 className="text-xl font-semibold mb-2">{p.name}</h2>
-                <p className="text-gray-600">{p.description}</p>
+                <p style={{ color: "var(--text-muted)" }}>{p.description}</p>
               </div>
             </div>
           ))}

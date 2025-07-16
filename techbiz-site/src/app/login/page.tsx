@@ -22,31 +22,72 @@ export default function LoginPage() {
   }
 
   return (
-    <main className="min-h-screen flex items-center justify-center bg-gray-100 px-4">
-      <form onSubmit={handleLogin} className="bg-white shadow-md p-6 rounded w-full max-w-sm space-y-4">
-        <h1 className="text-xl font-semibold text-center text-blue-700">Admin Login</h1>
-        {error && <p className="text-red-500 text-sm">{error}</p>}
+    <main
+      className="min-h-screen flex items-center justify-center px-4"
+      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+    >
+      <form
+        onSubmit={handleLogin}
+        className="shadow-md p-6 rounded w-full max-w-sm space-y-4"
+        style={{ backgroundColor: "var(--cardBackground)" }}
+      >
+        <h1
+          className="text-xl font-semibold text-center"
+          style={{ color: "var(--primary)" }}
+        >
+          Admin Login
+        </h1>
+
+        {error && (
+          <p className="text-sm" style={{ color: "red" }}>
+            {error}
+          </p>
+        )}
+
         <div>
-          <label className="block text-sm mb-1 text-blue-700">Email</label>
+          <label className="block text-sm mb-1" style={{ color: "var(--primary)" }}>
+            Email
+          </label>
           <input
             type="email"
-            className="w-full border border-gray-300 p-2 rounded text-blue-700"
+            className="w-full p-2 rounded border"
+            style={{
+              borderColor: "var(--border)",
+              backgroundColor: "var(--inputBackground)",
+              color: "var(--foreground)",
+            }}
             value={email}
             onChange={(e) => setEmail(e.target.value)}
             required
           />
         </div>
+
         <div>
-          <label className="block text-sm mb-1 text-blue-700">Password</label>
+          <label className="block text-sm mb-1" style={{ color: "var(--primary)" }}>
+            Password
+          </label>
           <input
             type="password"
-            className="w-full border border-gray-300 p-2 rounded text-blue-700"
+            className="w-full p-2 rounded border"
+            style={{
+              borderColor: "var(--border)",
+              backgroundColor: "var(--inputBackground)",
+              color: "var(--foreground)",
+            }}
             value={password}
             onChange={(e) => setPassword(e.target.value)}
             required
           />
         </div>
-        <button type="submit" className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700">
+
+        <button
+          type="submit"
+          className="w-full py-2 rounded hover:opacity-90"
+          style={{
+            backgroundColor: "var(--primary)",
+            color: "var(--buttonText)",
+          }}
+        >
           Log In
         </button>
       </form>

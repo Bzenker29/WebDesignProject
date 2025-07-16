@@ -8,32 +8,50 @@ export default function ServicesPage() {
   if (loading) {
     return (
       <main className="min-h-screen flex items-center justify-center">
-        <p className="text-gray-600">Loading services…</p>
+        <p style={{ color: "var(--text-muted)" }}>Loading services…</p>
       </main>
     );
   }
 
   if (services.length === 0) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gray-50 px-4 py-16">
-        <p className="text-gray-500 text-lg">No services found yet. Stay tuned!</p>
+      <main
+        className="min-h-screen flex items-center justify-center px-4 py-16"
+        style={{ backgroundColor: "var(--background)", color: "var(--text-muted)" }}
+      >
+        <p className="text-lg">No services found yet. Stay tuned!</p>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 px-4 py-16">
+    <main
+      className="min-h-screen px-4 py-16"
+      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+    >
       <div className="max-w-5xl mx-auto text-center">
-        <h1 className="text-3xl font-bold text-blue-700 mb-12">Our Services</h1>
+        <h1
+          className="text-3xl font-bold mb-12"
+          style={{ color: "var(--text-heading)" }}
+        >
+          Our Services
+        </h1>
+
         <div className="grid gap-8 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
           {services.map((s) => (
             <div
               key={s.id}
-              className="bg-white rounded-xl shadow p-6 hover:shadow-md transition text-left text-blue-700"
+              className="rounded-xl p-6 transition text-left hover:shadow-md"
+              style={{
+                backgroundColor: "var(--background)",
+                color: "var(--text-main)",
+                border: "2px solid var(--border)",
+                boxShadow: "0 4px 6px var(--shadow)",
+              }}
             >
               <div className="text-4xl mb-4">{s.icon || "🛠️"}</div>
-              <h2 className="text-lg font-semibold text-blue-700">{s.name}</h2>
-              <p className="text-gray-600">{s.description}</p>
+              <h2 className="text-lg font-semibold">{s.name}</h2>
+              <p style={{ color: "var(--text-muted)" }}>{s.description}</p>
             </div>
           ))}
         </div>

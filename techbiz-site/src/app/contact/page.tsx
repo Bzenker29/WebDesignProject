@@ -20,19 +20,40 @@ export default function ContactPage() {
   }
 
   return (
-    <main className="min-h-screen px-4 py-16 bg-gray-50">
+    <main
+      className="min-h-screen px-4 py-16"
+      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+    >
       <div className="max-w-xl mx-auto">
-        <h1 className="text-3xl font-bold mb-8 text-blue-700 text-center">Contact Us</h1>
+        <h1
+          className="text-3xl font-bold mb-8 text-center"
+          style={{ color: "var(--primary)" }}
+        >
+          Contact Us
+        </h1>
 
-        <form onSubmit={handleSubmit} className="space-y-6 bg-white shadow-md rounded-xl p-6">
+        <form
+          onSubmit={handleSubmit}
+          className="space-y-6 shadow-md rounded-xl p-6"
+          style={{ backgroundColor: "var(--cardBackground)" }}
+        >
           <div>
-            <label htmlFor="name" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="name"
+              className="block text-sm font-bold mb-1"
+              style={{ color: "var(--foreground)" }}
+            >
               Name
             </label>
             <input
               id="name"
               type="text"
-              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-700"
+              className="w-full p-3 border rounded focus:outline-none focus:ring-2"
+              style={{
+                borderColor: "var(--border)",
+                color: "var(--foreground)",
+                backgroundColor: "var(--inputBackground)",
+              }}
               value={form.name}
               onChange={(e) => setForm({ ...form, name: e.target.value })}
               required
@@ -40,13 +61,22 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="email"
+              className="block text-sm font-bold mb-1"
+              style={{ color: "var(--foreground)" }}
+            >
               Email
             </label>
             <input
               id="email"
               type="email"
-              className="w-full p-3 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-700"
+              className="w-full p-3 border rounded focus:outline-none focus:ring-2"
+              style={{
+                borderColor: "var(--border)",
+                color: "var(--foreground)",
+                backgroundColor: "var(--inputBackground)",
+              }}
               value={form.email}
               onChange={(e) => setForm({ ...form, email: e.target.value })}
               required
@@ -54,12 +84,21 @@ export default function ContactPage() {
           </div>
 
           <div>
-            <label htmlFor="message" className="block text-sm font-medium text-gray-700 mb-1">
+            <label
+              htmlFor="message"
+              className="block text-sm font-bold mb-1"
+              style={{ color: "var(--foreground)" }}
+            >
               Message
             </label>
             <textarea
               id="message"
-              className="w-full p-3 border border-gray-300 rounded h-32 focus:outline-none focus:ring-2 focus:ring-blue-500 text-blue-700"
+              className="w-full p-3 border rounded h-32 focus:outline-none focus:ring-2"
+              style={{
+                borderColor: "var(--border)",
+                color: "var(--foreground)",
+                backgroundColor: "var(--inputBackground)",
+              }}
               value={form.message}
               onChange={(e) => setForm({ ...form, message: e.target.value })}
               required
@@ -68,14 +107,23 @@ export default function ContactPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-3 rounded hover:bg-blue-700 transition font-semibold"
+            className="w-full py-3 rounded transition font-semibold"
+            style={{
+              backgroundColor: "var(--primary)",
+              color: "var(--btn-text)",
+            }}
           >
             Send Message
           </button>
         </form>
 
         {status && (
-          <p className="mt-4 text-center text-sm text-green-600">{status}</p>
+          <p
+            className="mt-4 text-center text-sm"
+            style={{ color: "var(--success)" }}
+          >
+            {status}
+          </p>
         )}
       </div>
     </main>

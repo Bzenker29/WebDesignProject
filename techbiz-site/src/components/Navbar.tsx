@@ -20,25 +20,34 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-white shadow-md">
-      <div className="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-        <Link href="/" className="text-xl font-bold text-blue-600">
+    <nav style={{ backgroundColor: "var(--background)", color: "var(--foreground)", borderColor: "var(--primary)" }} className="shadow-md border-b-4">
+      <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
+        {/* Left: Logo */}
+        <Link href="/" className="text-xl font-bold text-[var(--primary)]">
           TechBiz
         </Link>
-        <div className="flex items-center space-x-4">
-          <Link href="/products" className="text-gray-700 hover:text-blue-600">
+
+        {/* Center: Navigation Links */}
+        <div className="flex space-x-15 justify-center flex-1 text-lg font-bold">
+          <Link href="/products" className="hover:text-[var(--primary)]">
             Products
           </Link>
-          <Link href="/services" className="text-gray-700 hover:text-blue-600">
+          <Link href="/services" className="hover:text-[var(--primary)]">
             Services
           </Link>
-          <Link href="/contact" className="text-gray-700 hover:text-blue-600">
+          <Link href="/about" className="hover:text-[var(--primary)]">
+            About
+          </Link>
+          <Link href="/contact" className="hover:text-[var(--primary)]">
             Contact
           </Link>
+        </div>
 
+        {/* Right: Auth Links */}
+        <div className="flex items-center space-x-4">
           {user ? (
             <>
-              <Link href="/admin" className="text-blue-600 font-semibold">
+              <Link href="/admin" className="text-[var(--primary)] font-bold">
                 Admin
               </Link>
               <button
@@ -51,7 +60,7 @@ export default function Navbar() {
           ) : (
             <Link
               href="/login"
-              className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 text-sm"
+              className="bg-[var(--primary)] text-white px-4 py-2 rounded hover:opacity-90 text-sm font-bold"
             >
               Login
             </Link>

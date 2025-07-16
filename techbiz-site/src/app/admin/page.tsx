@@ -8,7 +8,6 @@ import { isAdmin } from "@/lib/checkAdmin";
 import AddProductForm from "@/components/AddProductForm";
 import AddServiceForm from "@/components/AddServiceForm";
 
-
 export default function AdminPage() {
   const [user, setUser] = useState<any>(null);
   const [isAuthorized, setIsAuthorized] = useState(false);
@@ -33,26 +32,36 @@ export default function AdminPage() {
 
   if (!isAuthorized) {
     return (
-      <main className="min-h-screen flex items-center justify-center bg-gray-100">
+      <main
+        className="min-h-screen flex items-center justify-center"
+        style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+      >
         <p>Checking access...</p>
       </main>
     );
   }
 
   return (
-    <main className="min-h-screen bg-gray-50 px-4 py-16">
+    <main
+      className="min-h-screen px-4 py-16"
+      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+    >
       <div className="max-w-3xl mx-auto space-y-8">
         <div>
-          <h1 className="text-2xl font-bold mb-2 text-blue-700">Admin Panel</h1>
-          <p className="mb-4 text-gray-600">Welcome, {user.email}</p>
+          <h1
+            className="text-2xl font-bold mb-2"
+            style={{ color: "var(--primary)" }}
+          >
+            Admin Panel
+          </h1>
+          <p className="mb-4" style={{ color: "var(--muted)" }}>
+            Welcome, {user.email}
+          </p>
         </div>
-  
-        {/* ✅ Add Product Form here */}
+
         <AddProductForm />
         <AddServiceForm />
-
       </div>
     </main>
   );
-  
 }
