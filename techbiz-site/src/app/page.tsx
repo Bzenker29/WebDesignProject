@@ -1,9 +1,8 @@
 "use client";
 
-
 import Image from "next/image";
+import CallToAction from "@/components/CallToAction";
 
-// app/page.tsx
 export default function Home() {
   return (
     <main
@@ -21,18 +20,19 @@ export default function Home() {
         >
           Powering Innovation in Tech & Engineering
         </h1>
-        <p className="text-lg md:text-xl mb-8 max-w-2xl mx-auto" style={{ color: "var(--text-muted)" }}>
+        <p
+          className="text-lg md:text-xl mb-8 max-w-2xl mx-auto"
+          style={{ color: "var(--text-muted)" }}
+        >
           Explore our tools, products, and services designed to take your projects to the next level.
         </p>
         <a
           href="/products"
-          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300"
+          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--primary-hover)] hover:text-[var(--btn-text)]"
           style={{
             backgroundColor: "var(--primary)",
             color: "var(--btn-text)",
           }}
-          onFocus={(e) => e.currentTarget.style.outline = "2px solid var(--primary-hover)"}
-          onBlur={(e) => e.currentTarget.style.outline = "none"}
         >
           View Products
         </a>
@@ -64,7 +64,10 @@ export default function Home() {
                 borderColor: "var(--border)",
               }}
             >
-              <h3 className="text-xl font-bold mb-2" style={{ color: "var(--text-heading)" }}>
+              <h3
+                className="text-xl font-bold mb-2"
+                style={{ color: "var(--text-heading)" }}
+              >
                 {service}
               </h3>
               <p style={{ color: "var(--text-muted)" }}>
@@ -82,34 +85,26 @@ export default function Home() {
 
       {/* CTA Section */}
       <section
-        className="py-20 px-8 text-center rounded-xl shadow mt-16"
+        className="py-20 px-8 text-center rounded-t-xl shadow mt-16"
         style={{ backgroundColor: "var(--primary)", color: "var(--btn-text)" }}
       >
-        <h2 className="text-3xl md:text-4xl font-bold mb-4">Let’s Build Something Together</h2>
+        <h2 className="text-3xl md:text-4xl font-bold mb-4">
+          Let’s Build Something Together
+        </h2>
         <p className="mb-8 text-lg max-w-xl mx-auto">
           Contact us today to discuss your next engineering project or get a custom quote.
         </p>
         <a
           href="/contact"
-          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300"
-          style={{ backgroundColor: "var(--btn-text)", color: "var(--primary)" }}
-          onFocus={(e) => e.currentTarget.style.outline = "2px solid var(--btn-disabled)"}
-          onBlur={(e) => e.currentTarget.style.outline = "none"}
+          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--btn-disabled)] hover:text-[var(--primary)]"
+          style={{
+            backgroundColor: "var(--btn-text)",
+            color: "var(--primary)",
+          }}
         >
           Contact Us
         </a>
       </section>
-
-      <style jsx>{`
-        a:hover {
-          background-color: var(--primary-hover);
-          color: var(--btn-text);
-        }
-        section a[href="/contact"]:hover {
-          background-color: var(--btn-disabled);
-          color: var(--primary);
-        }
-      `}</style>
     </main>
   );
 }

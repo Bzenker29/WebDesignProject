@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { onAuthStateChanged, signOut } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import Image from "next/image";
+import { usePathname } from 'next/navigation';
 
 
 export default function Navbar() {
@@ -20,6 +21,8 @@ export default function Navbar() {
   const handleLogout = async () => {
     await signOut(auth);
   };
+
+  const pathname = usePathname();
 
   return (
     <nav style={{ backgroundColor: "var(--foreground)", color: "var(--foreground)", borderColor: "var(--primary)" }} className="shadow-md border-b-4">
@@ -37,16 +40,36 @@ export default function Navbar() {
 
         {/* Center: Navigation Links */}
         <div className="flex space-x-15 justify-center flex-1 text-lg font-bold">
-          <Link href="/products" className="text-[var(--text-plain)] hover:text-[var(--primary)]">
+        <Link
+            href="/products"
+            className={`px-4 py-2 transition relative text-[var(--text-plain)] hover:text-[var(--primary)] ${
+              pathname === "/products" ? "after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[4px] after:bg-red-500" : ""
+            }`}
+          >
             Products
           </Link>
-          <Link href="/services" className="text-[var(--text-plain)] hover:text-[var(--primary)]">
+          <Link
+            href="/services"
+            className={`px-4 py-2 transition relative text-[var(--text-plain)] hover:text-[var(--primary)] ${
+              pathname === "/services" ? "after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[4px] after:bg-red-500" : ""
+            }`}
+          >
             Services
           </Link>
-          <Link href="/about" className="text-[var(--text-plain)] hover:text-[var(--primary)]">
+          <Link
+            href="/about"
+            className={`px-4 py-2 transition relative text-[var(--text-plain)] hover:text-[var(--primary)] ${
+              pathname === "/about" ? "after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[4px] after:bg-red-500" : ""
+            }`}
+          >
             About Us
           </Link>
-          <Link href="/contact" className="text-[var(--text-plain)] hover:text-[var(--primary)]">
+          <Link
+            href="/contact"
+            className={`px-4 py-2 transition relative text-[var(--text-plain)] hover:text-[var(--primary)] ${
+              pathname === "/contact" ? "after:absolute after:left-0 after:right-0 after:bottom-0 after:h-[4px] after:bg-red-500" : ""
+            }`}
+          >
             Contact
           </Link>
         </div>

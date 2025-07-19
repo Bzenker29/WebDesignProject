@@ -12,7 +12,7 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold mb-6 text-[var(--primary)]">About Us</h1>
 
         <p className="text-lg leading-7 mb-4">
-          Welcome to TechBiz — your one-stop shop for innovative tech solutions.
+          Welcome to Colangelo Manufacturing and Engineering — your one-stop shop for innovative tech solutions.
         </p>
         <p className="text-lg leading-7 mb-4">
           We specialize in providing top-notch products and services to help businesses grow and stay competitive in the modern digital landscape.
@@ -33,7 +33,8 @@ export default function AboutPage() {
               Meet Our President
             </h2>
             <p className="text-lg leading-7">
-              John Doe brings over 20 years of experience in the tech industry. His vision and leadership have driven TechBiz to new heights, always putting innovation and customer service first.
+            Todd Colangelo is the President of Colangelo Manufacturing and Engineering. He graduated from the University of Texas at Austin and brings a passion for leadership and innovation to the company. 
+            In his free time, Todd enjoys playing Rocket League, shooting hoops on the basketball court, and staying actively involved in the local community.
             </p>
           </div>
         </div>

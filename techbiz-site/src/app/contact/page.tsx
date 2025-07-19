@@ -34,8 +34,8 @@ export default function ContactPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-6 shadow-md rounded-xl p-6"
-          style={{ backgroundColor: "var(--cardBackground)" }}
+          className="space-y-6 shadow-xl rounded-xl p-6 border-1" 
+          style={{ backgroundColor: "var(--cardBackground)", borderColor: "var(--foreground)" }}
         >
           <div>
             <label
