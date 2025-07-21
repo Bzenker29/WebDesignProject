@@ -1,7 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { onAuthStateChanged } from "firebase/auth";
+import { onAuthStateChanged, User } from "firebase/auth";
 import { auth } from "@/lib/firebase";
 import { useRouter } from "next/navigation";
 import { isAdmin } from "@/lib/checkAdmin";
@@ -9,7 +9,7 @@ import AddProductForm from "@/components/AddProductForm";
 import AddServiceForm from "@/components/AddServiceForm";
 
 export default function AdminPage() {
-  const [user, setUser] = useState<any>(null);
+  const [user, setUser] = useState<User | null>(null);
   const [isAuthorized, setIsAuthorized] = useState(false);
   const router = useRouter();
 
@@ -28,7 +28,7 @@ export default function AdminPage() {
       }
     });
     return () => unsubscribe();
-  }, []);
+  }, [router]);
 
   if (!isAuthorized) {
     return (
@@ -55,7 +55,7 @@ export default function AdminPage() {
             Admin Panel
           </h1>
           <p className="mb-4" style={{ color: "var(--muted)" }}>
-            Welcome, {user.email}
+            Welcome, {user?.email}
           </p>
         </div>
 

@@ -1,8 +1,5 @@
 "use client";
 
-import Image from "next/image";
-import CallToAction from "@/components/CallToAction";
-
 export default function Home() {
   return (
     <main

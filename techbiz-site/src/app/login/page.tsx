@@ -16,9 +16,9 @@ export default function LoginPage() {
     try {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/admin");
-    } catch (err) {
+    } catch (_) {
       setError("Invalid email or password");
-    }
+    }    
   }
 
   return (
