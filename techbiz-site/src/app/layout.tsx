@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "TechBiz | Tools & Services for Engineering",
+  title: "Colangelo Engineering | Tools & Services for Engineering",
   description: "Showcasing tech tools and engineering solutions.",
 };
 
