@@ -94,7 +94,7 @@ export default function AddServiceForm() {
         <p
           className="mt-4 text-sm"
           style={{
-            color: status.startsWith("✅") ? "var(--accent)" : "red",
+            color: status.startsWith("✅") ? "var(-text-main)" : "red",
           }}
         >
           {status}

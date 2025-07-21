@@ -62,7 +62,7 @@ export default function ProductsPage() {
                 <img
                   src={p.image}
                   alt={p.name}
-                  className="h-48 w-full object-cover"
+                  className="w-full h-80 object-cover"
                 />
               )}
               <div className="p-6">

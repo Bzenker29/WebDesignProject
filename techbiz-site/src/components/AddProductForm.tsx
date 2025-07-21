@@ -79,7 +79,7 @@ export default function AddProductForm() {
       </form>
 
       {status && (
-        <p className="mt-4 text-sm" style={{ color: status.startsWith("✅") ? "var(--accent)" : "red" }}>
+        <p className="mt-4 text-sm" style={{ color: status.startsWith("✅") ? "var(-text-main)" : "red" }}>
           {status}
         </p>
       )}

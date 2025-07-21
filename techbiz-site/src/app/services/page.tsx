@@ -29,7 +29,7 @@ export default function ServicesPage() {
       className="min-h-screen px-4 py-16"
       style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
     >
-      <div className="max-w-5xl mx-auto text-center">
+      <div className="max-w-6xl mx-auto text-center">
         <h1
           className="text-3xl font-bold mb-12"
           style={{ color: "var(--text-heading)" }}
