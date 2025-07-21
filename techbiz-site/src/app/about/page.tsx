@@ -12,7 +12,7 @@ export default function AboutPage() {
         <h1 className="text-4xl font-bold mb-6 text-[var(--primary)]">About Us</h1>
 
         <p className="text-lg leading-7 mb-4">
-          Welcome to Colangelo Manufacturing and Engineering — your one-stop shop for innovative tech solutions.
+          Welcome to Colangelo Group Engineering and Manufacturing Services CGEMS — your one-stop shop for innovative tech solutions.
         </p>
         <p className="text-lg leading-7 mb-4">
           We specialize in providing top-notch products and services to help businesses grow and stay competitive in the modern digital landscape.
