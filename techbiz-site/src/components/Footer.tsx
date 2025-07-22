@@ -41,7 +41,7 @@ export default function Footer() {
 
         {/* Right - Copyright */}
         <div className="text-center text-xs md:text-right">
-          &copy; {new Date().getFullYear()} TechBiz. All rights reserved.
+          &copy; {new Date().getFullYear()} CGEMS. All rights reserved.
         </div>
       </div>
     </footer>
