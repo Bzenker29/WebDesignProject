@@ -1,15 +1,23 @@
 "use client";
+import useProducts from "../lib/useProducts";
 
 export default function Home() {
+  const { products, loading } = useProducts();
   return (
     <main
       className="min-h-screen"
-      style={{ backgroundColor: "var(--background)", color: "var(--text-main)" }}
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--text-main)",
+      }}
     >
       {/* Hero Section */}
       <section
         className="py-20 px-8 text-center rounded-xl shadow"
-        style={{ backgroundColor: "var(--background)", color: "var(--text-main)" }}
+        style={{
+          backgroundColor: "var(--background)",
+          color: "var(--text-main)",
+        }}
       >
         <h1
           className="text-4xl md:text-5xl font-bold mb-4"
@@ -21,7 +29,8 @@ export default function Home() {
           className="text-lg md:text-xl mb-8 max-w-2xl mx-auto"
           style={{ color: "var(--text-muted)" }}
         >
-          Explore our tools, products, and services designed to take your projects to the next level.
+          Explore our tools, products, and services designed to take your
+          projects to the next level.
         </p>
         <a
           href="/products"
@@ -34,7 +43,6 @@ export default function Home() {
           View Products
         </a>
       </section>
-
       {/* Services Preview */}
       <section
         className="py-16 px-8 rounded-xl shadow max-w-6xl mx-auto mt-12"
@@ -79,7 +87,87 @@ export default function Home() {
           ))}
         </div>
       </section>
-
+      {/* Products Section */}
+      <section
+        className="py-16 px-8 rounded-xl shadow max-w-6xl mx-auto mt-12"
+        style={{ backgroundColor: "var(--background)" }}
+      >
+        <h2
+          className="text-3xl font-semibold text-center mb-12"
+          style={{ color: "var(--text-heading)" }}
+        >
+          Our Products
+        </h2>
+        {loading ? (
+          <p className="text-center">Loading products...</p>
+        ) : (
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {products.map((product) => (
+              <div
+                key={product.id}
+                className="p-6 rounded-xl shadow hover:shadow-md transition border flex flex-col items-center"
+                style={{
+                  backgroundColor: "var(--background)",
+                  color: "var(--text-main)",
+                  borderColor: "var(--border)",
+                }}
+              >
+                {product.image && (
+                  <img
+                    src={product.image}
+                    alt={product.name}
+                    className="mb-4 w-32 h-32 object-cover rounded"
+                  />
+                )}
+                <h3
+                  className="text-xl font-bold mb-2"
+                  style={{ color: "var(--text-heading)" }}
+                >
+                  {product.name}
+                </h3>
+                <p style={{ color: "var(--text-muted)" }}>
+                  {product.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        )}
+      </section>
+      {/* Premiere Product Highlight: Port Scanner */}
+      <section
+        className="py-16 px-8 rounded-xl shadow max-w-6xl mx-auto mt-12 text-center"
+        style={{
+          backgroundColor: "var(--background)",
+          color: "var(--text-main)",
+        }}
+      >
+        <h2
+          className="text-3xl font-semibold text-center mb-4"
+          style={{ color: "var(--text-heading)" }}
+        >
+          Premiere Product: Port Scanner
+        </h2>
+        <p
+          className="text-lg mb-6 max-w-2xl mx-auto"
+          style={{ color: "var(--text-muted)" }}
+        >
+          Our advanced Port Scanner is designed for network professionals and
+          businesses seeking robust security insights. Effortlessly scan and
+          analyze open ports, detect vulnerabilities, and ensure your
+          infrastructure is protected. Fast, reliable, and easy to use—this tool
+          sets the standard for network diagnostics.
+        </p>
+        <a
+          href="/products/port-scanner"
+          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--primary-hover)] hover:text-[var(--btn-text)]"
+          style={{
+            backgroundColor: "var(--primary)",
+            color: "var(--btn-text)",
+          }}
+        >
+          Learn More
+        </a>
+      </section>
       {/* CTA Section */}
       <section
         className="py-20 px-8 text-center rounded-t-xl shadow mt-16"
@@ -89,7 +177,8 @@ export default function Home() {
           Let’s Build Something Together
         </h2>
         <p className="mb-8 text-lg max-w-xl mx-auto">
-          Contact us today to discuss your next engineering project or get a custom quote.
+          Contact us today to discuss your next engineering project or get a
+          custom quote.
         </p>
         <a
           href="/contact"
