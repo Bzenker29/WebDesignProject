@@ -24,7 +24,7 @@ export default function PortScannerInfo() {
           and businesses. It allows you to scan and analyze open ports on any
           device, helping you detect vulnerabilities and secure your
           infrastructure. With a user-friendly interface and fast scanning
-          capabilities, it's ideal for both quick checks and in-depth
+          capabilities, it&apos;s ideal for both quick checks and in-depth
           diagnostics.
         </p>
         <ul
@@ -41,9 +41,9 @@ export default function PortScannerInfo() {
           className="text-lg mb-8 max-w-2xl mx-auto"
           style={{ color: "var(--text-muted)" }}
         >
-          Whether you're a network administrator, security analyst, or a curious
-          user, our port scanner helps you stay ahead of threats and maintain a
-          secure environment.
+          Whether you&apos;re a network administrator, security analyst, or a
+          curious user, our port scanner helps you stay ahead of threats and
+          maintain a secure environment.
         </p>
         <a
           href="/contact"
@@ -75,8 +75,8 @@ export default function PortScannerInfo() {
           className="text-lg max-w-2xl mx-auto mb-6"
           style={{ color: "var(--text-muted)" }}
         >
-          In today's digital landscape, network security is more important than
-          ever. Open ports can expose your systems to cyber threats,
+          In today&apos;s digital landscape, network security is more important
+          than ever. Open ports can expose your systems to cyber threats,
           unauthorized access, and data breaches. Regularly scanning your
           network helps you:
         </p>
