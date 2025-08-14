@@ -145,7 +145,7 @@ export default function Home() {
           className="text-3xl font-semibold text-center mb-4"
           style={{ color: "var(--text-heading)" }}
         >
-          Premiere Product: Port Scanner
+          IP & Port Scanner
         </h2>
         <p
           className="text-lg mb-6 max-w-2xl mx-auto"
@@ -158,7 +158,7 @@ export default function Home() {
           sets the standard for network diagnostics.
         </p>
         <a
-          href="/products/port-scanner"
+          href="/scanner"
           className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--primary-hover)] hover:text-[var(--btn-text)]"
           style={{
             backgroundColor: "var(--primary)",
