@@ -34,7 +34,14 @@ export default function AdminPage() {
     return (
       <main
         className="min-h-screen flex items-center justify-center"
-        style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+        style={{
+          backgroundColor: "var(--background)",
+          color: "var(--text-main)",
+          backgroundImage: "url('/topography.svg')",
+          backgroundSize: "600px", // adjust size of pattern
+          backgroundRepeat: "repeat",
+          backgroundPosition: "top left",
+        }}
       >
         <p>Checking access...</p>
       </main>
@@ -44,17 +51,27 @@ export default function AdminPage() {
   return (
     <main
       className="min-h-screen px-4 py-16"
-      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--text-main)",
+        backgroundImage: "url('/topography.svg')",
+        backgroundSize: "600px", // adjust size of pattern
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top left",
+      }}
     >
       <div className="max-w-3xl mx-auto space-y-8">
         <div>
           <h1
-            className="text-2xl font-bold mb-2"
+            className="text-5xl font-bold mb-2"
             style={{ color: "var(--primary)" }}
           >
             Admin Panel
           </h1>
-          <p className="mb-4" style={{ color: "var(--muted)" }}>
+          <p
+            className="mb-4 text-3xl font-bold"
+            style={{ color: "var(--primary)" }}
+          >
             Welcome, {user?.email}
           </p>
         </div>

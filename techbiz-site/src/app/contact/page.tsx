@@ -22,11 +22,18 @@ export default function ContactPage() {
   return (
     <main
       className="min-h-screen px-4 py-16"
-      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--text-main)",
+        backgroundImage: "url('/topography.svg')",
+        backgroundSize: "600px", // adjust size of pattern
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top left",
+      }}
     >
       <div className="max-w-xl mx-auto">
         <h1
-          className="text-3xl font-bold mb-8 text-center"
+          className="text-5xl font-bold mb-8 text-center"
           style={{ color: "var(--primary)" }}
         >
           Contact Us
@@ -34,8 +41,12 @@ export default function ContactPage() {
 
         <form
           onSubmit={handleSubmit}
-          className="space-y-6 shadow-xl rounded-xl p-6 border-1" 
-          style={{ backgroundColor: "var(--cardBackground)", borderColor: "var(--foreground)" }}
+          className="space-y-6 shadow-xl rounded-xl p-6 border-1"
+          style={{
+            backgroundColor: "var(--background)",
+            borderColor: "var(--foreground)",
+            color: "var(--text-main)",
+          }}
         >
           <div>
             <label

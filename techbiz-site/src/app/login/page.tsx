@@ -17,20 +17,31 @@ export default function LoginPage() {
       await signInWithEmailAndPassword(auth, email, password);
       router.push("/admin");
     } catch (err) {
-      console.error(err); 
+      console.error(err);
       setError("Invalid email or password");
-    }  
+    }
   }
 
   return (
     <main
       className="min-h-screen flex items-center justify-center px-4"
-      style={{ backgroundColor: "var(--background)", color: "var(--foreground)" }}
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--text-main)",
+        backgroundImage: "url('/topography.svg')",
+        backgroundSize: "600px", // adjust size of pattern
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top left",
+      }}
     >
       <form
         onSubmit={handleLogin}
-        className="shadow-md p-6 rounded w-full max-w-sm space-y-4"
-        style={{ backgroundColor: "var(--cardBackground)" }}
+        className="space-y-6 shadow-xl rounded-xl p-6 border border-1 w-full max-w-xl mx-auto"
+        style={{
+          backgroundColor: "var(--background)",
+          borderColor: "var(--foreground)",
+          color: "var(--text-main)",
+        }}
       >
         <h1
           className="text-xl font-semibold text-center"
@@ -46,7 +57,10 @@ export default function LoginPage() {
         )}
 
         <div>
-          <label className="block text-sm mb-1" style={{ color: "var(--primary)" }}>
+          <label
+            className="block text-sm mb-1"
+            style={{ color: "var(--primary)" }}
+          >
             Email
           </label>
           <input
@@ -64,7 +78,10 @@ export default function LoginPage() {
         </div>
 
         <div>
-          <label className="block text-sm mb-1" style={{ color: "var(--primary)" }}>
+          <label
+            className="block text-sm mb-1"
+            style={{ color: "var(--primary)" }}
+          >
             Password
           </label>
           <input
@@ -83,10 +100,10 @@ export default function LoginPage() {
 
         <button
           type="submit"
-          className="w-full py-2 rounded hover:opacity-90"
+          className="w-full py-2 rounded hover:opacity-90 font-semibold"
           style={{
             backgroundColor: "var(--primary)",
-            color: "var(--buttonText)",
+            color: "var(--btn-text)",
           }}
         >
           Log In

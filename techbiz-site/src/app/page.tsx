@@ -1,5 +1,6 @@
 "use client";
 import useProducts from "../lib/useProducts";
+import Image from "next/image";
 
 export default function Home() {
   const { products, loading } = useProducts();
@@ -9,44 +10,70 @@ export default function Home() {
       style={{
         backgroundColor: "var(--background)",
         color: "var(--text-main)",
+        backgroundImage: "url('/topography.svg')",
+        backgroundSize: "600px", // adjust size of pattern
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top left",
       }}
     >
       {/* Hero Section */}
       <section
-        className="py-20 px-8 text-center rounded-xl shadow"
+        className="relative py-45 px-8 shadow flex flex-col items-center md:items-start border-b-4"
         style={{
-          backgroundColor: "var(--background)",
+          backgroundImage: "url('/home_bg.jpg')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           color: "var(--text-main)",
+          borderColor: "var(--primary)",
         }}
       >
-        <h1
-          className="text-4xl md:text-5xl font-bold mb-4"
-          style={{ color: "var(--text-heading)" }}
-        >
-          Powering Innovation in Tech & Engineering
-        </h1>
-        <p
-          className="text-lg md:text-xl mb-8 max-w-2xl mx-auto"
-          style={{ color: "var(--text-muted)" }}
-        >
-          Explore our tools, products, and services designed to take your
-          projects to the next level.
-        </p>
-        <a
-          href="/products"
-          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--primary-hover)] hover:text-[var(--btn-text)]"
+        {/* Optional overlay mask/fade */}
+        <div
+          className="absolute inset-0 rounded-xl"
           style={{
-            backgroundColor: "var(--primary)",
-            color: "var(--btn-text)",
+            background:
+              "linear-gradient(to right, rgba(0,0,0,0.6), rgba(0,0,0,0.2))",
+            zIndex: 0,
           }}
-        >
-          View Products
-        </a>
+        ></div>
+
+        {/* Content */}
+        <div className="relative z-10 max-w-2xl text-center md:text-left font-bold">
+          <h1
+            className="text-4xl md:text-5xl font-bold mb-4"
+            style={{ color: "var(--text-plain)" }}
+          >
+            Powering Innovation in Tech & Engineering
+          </h1>
+          <p
+            className="text-lg md:text-xl mb-8 font-bold"
+            style={{ color: "var(--text-plain)" }}
+          >
+            Explore our tools, products, and services designed to take your
+            projects to the next level.
+          </p>
+          <a
+            href="/products"
+            className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--primary-hover)] hover:text-[var(--btn-text)]"
+            style={{
+              backgroundColor: "var(--primary)",
+              color: "var(--btn-text)",
+            }}
+          >
+            View Products
+          </a>
+        </div>
       </section>
+
       {/* Services Preview */}
       <section
-        className="py-16 px-8 rounded-xl shadow max-w-6xl mx-auto mt-12"
-        style={{ backgroundColor: "var(--background)" }}
+        className="py-16 px-8 rounded-xl shadow-xl border-1 p-6 space-y-6 max-w-6xl mx-auto mt-12"
+        style={{
+          backgroundColor: "var(--background)",
+          borderColor: "var(--foreground)",
+          color: "var(--text-main)",
+        }}
       >
         <h2
           className="text-3xl font-semibold text-center mb-12"
@@ -75,7 +102,7 @@ export default function Home() {
               >
                 {service}
               </h3>
-              <p style={{ color: "var(--text-muted)" }}>
+              <p style={{ color: "var(--text-main)" }}>
                 {service === "Custom Engineering" &&
                   "Bespoke solutions for manufacturing, robotics, and industrial design."}
                 {service === "Rapid Prototyping" &&
@@ -89,8 +116,12 @@ export default function Home() {
       </section>
       {/* Products Section */}
       <section
-        className="py-16 px-8 rounded-xl shadow max-w-6xl mx-auto mt-12"
-        style={{ backgroundColor: "var(--background)" }}
+        className="py-16 px-8 rounded-xl shadow-xl border-1 p-6 space-y-6 max-w-6xl mx-auto mt-12"
+        style={{
+          backgroundColor: "var(--background)",
+          borderColor: "var(--foreground)",
+          color: "var(--text-main)",
+        }}
       >
         <h2
           className="text-3xl font-semibold text-center mb-12"
@@ -125,7 +156,7 @@ export default function Home() {
                 >
                   {product.name}
                 </h3>
-                <p style={{ color: "var(--text-muted)" }}>
+                <p style={{ color: "var(--text-main)" }}>
                   {product.description}
                 </p>
               </div>
@@ -135,9 +166,10 @@ export default function Home() {
       </section>
       {/* Premiere Product Highlight: Port Scanner */}
       <section
-        className="py-16 px-8 rounded-xl shadow max-w-6xl mx-auto mt-12 text-center"
+        className="py-16 px-8 rounded-xl text-center shadow-xl border-1 p-6 space-y-6 max-w-6xl mx-auto mt-12"
         style={{
           backgroundColor: "var(--background)",
+          borderColor: "var(--foreground)",
           color: "var(--text-main)",
         }}
       >
@@ -148,8 +180,8 @@ export default function Home() {
           IP & Port Scanner
         </h2>
         <p
-          className="text-lg mb-6 max-w-2xl mx-auto"
-          style={{ color: "var(--text-muted)" }}
+          className="text-lg mb-6 max-w-4xl mx-auto"
+          style={{ color: "var(--text-main)" }}
         >
           Our advanced Port Scanner is designed for network professionals and
           businesses seeking robust security insights. Effortlessly scan and
@@ -159,7 +191,7 @@ export default function Home() {
         </p>
         <a
           href="/scanner"
-          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--primary-hover)] hover:text-[var(--btn-text)]"
+          className="inline-block px-6 py-3 rounded-xl shadow font-bold transition-colors duration-300 hover:bg-[var(--btn-disabled)] hover:text-[var(--primary)]"
           style={{
             backgroundColor: "var(--primary)",
             color: "var(--btn-text)",

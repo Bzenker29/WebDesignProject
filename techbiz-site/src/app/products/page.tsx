@@ -1,6 +1,7 @@
 "use client";
 
 import useProducts from "@/lib/useProducts";
+import Image from "next/image";
 
 export default function ProductsPage() {
   const { products, loading } = useProducts();
@@ -23,9 +24,18 @@ export default function ProductsPage() {
     return (
       <main
         className="min-h-screen flex items-center justify-center px-4 py-16"
-        style={{ backgroundColor: "var(--background)", color: "var(--text-muted)" }}
+        style={{
+          backgroundColor: "var(--background)",
+          color: "var(--text-main)",
+          backgroundImage: "url('/topography.svg')",
+          backgroundSize: "600px", // adjust size of pattern
+          backgroundRepeat: "repeat",
+          backgroundPosition: "top left",
+        }}
       >
-        <p className="text-lg">No products available right now. Check back soon!</p>
+        <p className="text-lg">
+          No products available right now. Check back soon!
+        </p>
       </main>
     );
   }
@@ -36,11 +46,18 @@ export default function ProductsPage() {
   return (
     <main
       className="min-h-screen px-4 py-16"
-      style={{ backgroundColor: "var(--background)" }}
+      style={{
+        backgroundColor: "var(--background)",
+        color: "var(--text-main)",
+        backgroundImage: "url('/topography.svg')",
+        backgroundSize: "600px", // adjust size of pattern
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top left",
+      }}
     >
       <div className="max-w-6xl mx-auto">
         <h1
-          className="text-3xl font-bold text-center mb-12"
+          className="text-5xl font-bold text-center mb-12"
           style={{ color: "var(--text-heading)" }}
         >
           Our Products
@@ -59,11 +76,14 @@ export default function ProductsPage() {
               }}
             >
               {p.image && (
-                <img
-                  src={p.image}
-                  alt={p.name}
-                  className="w-full h-80 object-cover"
-                />
+                <div className="relative w-full h-80">
+                  <Image
+                    src={p.image}
+                    alt={p.name}
+                    fill
+                    className="object-cover rounded"
+                  />
+                </div>
               )}
               <div className="p-6">
                 <h2 className="text-xl font-semibold mb-2">{p.name}</h2>

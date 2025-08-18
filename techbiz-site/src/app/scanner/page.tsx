@@ -3,13 +3,23 @@
 export default function PortScannerInfo() {
   return (
     <main
-      className="min-h-screen pb-16"
+      className="min-h-screen px-4 py-16"
       style={{
         backgroundColor: "var(--background)",
         color: "var(--text-main)",
+        backgroundImage: "url('/topography.svg')",
+        backgroundSize: "600px", // adjust size of pattern
+        backgroundRepeat: "repeat",
+        backgroundPosition: "top left",
       }}
     >
-      <section className="py-20 px-8 text-center rounded-xl shadow max-w-4xl mx-auto mt-12">
+      <section
+        className="pt-24 pb-24 px-8 text-center rounded-xl shadow max-w-4xl mx-auto mt-0 mb-12"
+        style={{
+          backgroundColor: "var(--background)", // solid white content background
+          color: "var(--text-main)",
+        }}
+      >
         <h1
           className="text-4xl md:text-5xl font-bold mb-6"
           style={{ color: "var(--text-heading)" }}
@@ -59,9 +69,9 @@ export default function PortScannerInfo() {
 
       {/* Why Section */}
       <section
-        className="py-16 px-8 rounded-xl shadow max-w-4xl mx-auto mt-12 text-center"
+        className="pt-20 px-8 text-center rounded-xl shadow max-w-4xl mx-auto mt-0"
         style={{
-          backgroundColor: "var(--background)",
+          backgroundColor: "var(--background)", // ✅ white background again
           color: "var(--text-main)",
         }}
       >
