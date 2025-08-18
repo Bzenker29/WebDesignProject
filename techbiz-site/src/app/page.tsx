@@ -144,11 +144,14 @@ export default function Home() {
                 }}
               >
                 {product.image && (
-                  <img
-                    src={product.image}
-                    alt={product.name}
-                    className="mb-4 w-32 h-32 object-cover rounded"
-                  />
+                  <div className="relative w-40 h-40 mb-4">
+                    <Image
+                      src={product.image}
+                      alt={product.name}
+                      fill
+                      className="object-cover rounded"
+                    />
+                  </div>
                 )}
                 <h3
                   className="text-xl font-bold mb-2"
