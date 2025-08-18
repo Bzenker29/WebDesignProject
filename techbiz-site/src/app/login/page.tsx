@@ -28,7 +28,7 @@ export default function LoginPage() {
       style={{
         backgroundColor: "var(--background)",
         color: "var(--text-main)",
-        backgroundImage: "url('/topography.svg')",
+        backgroundImage: "url('/topography.png')",
         backgroundSize: "600px", // adjust size of pattern
         backgroundRepeat: "repeat",
         backgroundPosition: "top left",

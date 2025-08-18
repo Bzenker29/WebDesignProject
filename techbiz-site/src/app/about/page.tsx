@@ -8,7 +8,7 @@ export default function AboutPage() {
       style={{
         backgroundColor: "var(--background)",
         color: "var(--text-main)",
-        backgroundImage: "url('/topography.svg')",
+        backgroundImage: "url('/topography.png')",
         backgroundSize: "600px",
         backgroundRepeat: "repeat",
         backgroundPosition: "top left",
